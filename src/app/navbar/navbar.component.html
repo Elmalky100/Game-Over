@@ -1,0 +1,112 @@
+
+<nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top main-color">
+      <div class="container">
+        <a class="navbar-brand  me-5 font" routerLink="home">
+            <img _ngcontent-mxg-c23="" src="assets/images/image2.png" class="img">
+            <span class="text-white">Game Over</span>
+        </a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav me-auto mt-2 mt-lg-0 ms-4">
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link active text-white" routerLink="home" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item">
+                    <a class="nav-link colorMain" routerLink="all">All</a>
+                </li>
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle colorMain cursorPointer"  id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Platforms</a>
+                    <ul  aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a class="dropdown-item" [routerLink]="['/platform', 'pc' ]">pc</a></li>
+                        <li data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a class="dropdown-item" [routerLink]="['/platform', 'browser' ]">browser</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle colorMain cursorPointer"  id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort-by</a>
+                    <ul  aria-labelledby="navbarDropdown" class="dropdown-menu" data-bs-popper="static">
+                        <li data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a class="dropdown-item"  [routerLink]="['/sort-by', 'release-date']">release-date</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="
+                            ['/sort-by','popularity']">popularity</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a class="dropdown-item" [routerLink]="
+                            ['/sort-by','alphabetical']">alphabetical</a>
+                        </li>
+                        <li data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a class="dropdown-item"[routerLink]="
+                            ['/sort-by','relevance']">relevance</a>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li *ngIf="isLogin" class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle colorMain cursorPointer" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categories</a>
+                    <ul  aria-labelledby="navbarDropdown" class="dropdown-menu">
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item" [routerLink]="['/category', 'racing' ]">racing</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'sports' ]">sports</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'social' ]">social</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'shooter' ]">shooter</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'open-world' ]">open-world</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'zombie' ]">zombie</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item" [routerLink]="['/category', 'fantasy' ]">fantasy</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'action-rpg' ]">action-rpg</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'action' ]">action</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'flight' ]">flight</a>
+                        </li>
+                        <li  data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                            <a  class="dropdown-item"  [routerLink]="['/category', 'battle-royale' ]">battle-royale</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+
+            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+        
+                <li *ngIf="!isLogin" class="nav-item me-2">
+                    <a class="nav-link colorMain cursorPointer " routerLink="login" >Login</a>
+                </li>
+                <li *ngIf="!isLogin" class="nav-item me-2">
+                    <span class="nav-link  colorMain cursorPointer btn btn-outline" routerLink="register">Join Free</span>
+                </li>
+                <li *ngIf="isLogin" class="nav-item me-2">
+                    <span (click)="logout()" class="nav-link  colorMain cursorPointer btn btn-outline">LogOut</span>
+                </li>
+            </ul>
+           
+        </div>
+  </div>
+</nav>

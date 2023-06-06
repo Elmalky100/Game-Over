@@ -1,0 +1,63 @@
+
+<div class="container mt-5 pt-5">
+    <div class="pt-3 mb-5">
+        <div class="container bg-shadow">
+            <div class="row ">
+                <div class="col-md-6 image">
+                </div>
+                <div class="col-md-6 gray">
+                    <div class="py-5 mx-2">
+                        <div class="text-center">
+    
+                            <!-- <img src="../../assets/images/image2.png" class="myimg m-2"/> -->
+                            <h1 class="h4 mb-4">Log in to GameOver</h1>
+    
+                            <div *ngIf="apiError.length>0" class="alert alert-danger mywidth mb-3"> {{apiError}}</div>
+                        </div>
+                        <form [formGroup]="LoginForm " (ngSubmit)="handleLogin(LoginForm)">
+    
+    
+    
+                            <input type="email" class="form-control mb-3" formControlName="email"
+                                placeholder="Email" />
+    
+    
+                                <div *ngIf="LoginForm.get('email')?.errors && LoginForm.get('email')?.touched " class="alert alert-danger mywidth mb-3 ">
+                                    <p *ngIf="LoginForm.get('email')?.getError('required')" class="m-0">Email is Required</p>
+                                    <p *ngIf="LoginForm.get('email')?.getError('email')" class="m-0">Email is Invalid forExample(ali@gmail.com)</p>
+                                </div>
+    
+                            <input type="password" class="form-control mb-3" formControlName="password"
+                                placeholder="Password" />
+    
+    
+                                <div *ngIf="LoginForm.get('password')?.errors && LoginForm.get('password')?.touched " class="alert alert-danger mywidth mb-3 ">
+                                    <p *ngIf="LoginForm.get('password')?.getError('required')" class="m-0">Password is Required</p>
+                                    <p *ngIf="LoginForm.get('password')?.getError('pattern')" class="m-0"> password must start with uppercase character then from 5 to 10 smallcase characters or numbers</p>
+                                </div>
+    
+    
+                            <div class="text-center">
+                                <button [disabled]="LoginForm.invalid" type="submit" class="btn btn-primary btn-bg ">
+                                    <i *ngIf="isLodding" class="fas fa-spinner fa-spin"></i>
+                                    <span *ngIf="!isLodding">Login</span>
+                                </button>
+                            </div>
+                        </form>
+                        <hr class="mywidth my-3" />
+                        <div class="text-center">
+                            <a onclick="alert('please make anew account')" class="small cursorPointer text-decoration-none log">Forgot Password?
+                            </a></div>
+                        <div class="text-center">
+                            <span  class="small">Not a member yet?</span>
+                            <a routerLink="/register" class="small text-decoration-none cursorPointer log ms-2">Create Account
+                                <i class="fas fa-chevron-right small"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

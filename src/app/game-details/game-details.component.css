@@ -1,0 +1,27 @@
+
+.background{
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    background-position: top;
+}
+
+.layer{
+    background: linear-gradient(rgba(39,43,48,.9),#272b30);
+    height: 100vh;
+}
+
+
+
+#image{
+transition: all .5s;
+}
+#image:hover{
+opacity: 0;
+}
+.box-bg{
+    border-color: #32383e;
+}
+
+.description{
+    font-size: 20px;
+}

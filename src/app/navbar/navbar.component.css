@@ -1,0 +1,26 @@
+.img{
+    width: 70px;
+    filter: drop-shadow(1px 1px 3px #1983e6ce);
+}
+.navbar{
+    border-bottom: 1px solid rgba(28,28,28,.6);
+    box-shadow: 0 .125rem .25rem #00000013!important;
+}
+
+
+.nav-link{
+    transition: color .15s;
+}
+
+.nav-link:hover,.nav-link:focus {
+   color:rgba(255, 255, 255, .75) ;
+}
+
+.btn-outline{
+    color: #4799eb;
+    border-color: #4799eb;
+    transition: all .1s;
+}
+.btn-outline:hover, .btn-outline:focus{
+    color: #4799eb;
+}

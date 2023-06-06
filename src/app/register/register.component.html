@@ -1,0 +1,83 @@
+
+<div class="container mt-5 pt-5">
+    <div class="pt-3 mb-5">
+        <div class="container bg-shadow">
+            <div class="row ">
+                <div class="col-md-6 image">
+                </div>
+                <div class="col-md-6 gray">
+                    <div class="py-5 mx-2">
+                        <div class="text-center">
+                            <h1 class="h4 mb-4">Create My Account!</h1>
+    
+                            <div *ngIf="apiError.length>0" class="alert alert-danger"> {{apiError}}</div>
+                        </div>
+                        <form [formGroup]="registerForm " (ngSubmit)="handleRegister(registerForm)">
+                            <input type="text" class="form-control mb-3" formControlName="name" placeholder="Name" />
+    
+                            <div *ngIf="registerForm.get('name')?.errors && registerForm.get('name')?.touched " class="alert alert-danger">
+                                <p *ngIf="registerForm.get('name')?.getError('required')" class="m-0">Name is Required</p>
+                                <p *ngIf="registerForm.get('name')?.getError('minlength')" class="m-0">Name minlength is 3 </p>
+                                <p *ngIf="registerForm.get('name')?.getError('maxlength')" class="m-0">Name maxlength is 10 </p>
+                            </div>
+    
+    
+                            <input type="email" class="form-control mb-3" formControlName="email"
+                                placeholder="Email Address" />
+    
+    
+                                <div *ngIf="registerForm.get('email')?.errors && registerForm.get('email')?.touched " class="alert alert-danger">
+                                    <p *ngIf="registerForm.get('email')?.getError('required')" class="m-0">Email is Required</p>
+                                    <p *ngIf="registerForm.get('email')?.getError('email')" class="m-0">Email is Invalid forExample(ali@gmail.com)</p>
+                                </div>
+    
+                            <input type="password" class="form-control mb-3" formControlName="password"
+                                placeholder="Password" />
+    
+    
+                                <div *ngIf="registerForm.get('password')?.errors && registerForm.get('password')?.touched " class="alert alert-danger">
+                                    <p *ngIf="registerForm.get('password')?.getError('required')" class="m-0">Password is Required</p>
+                                    <p *ngIf="registerForm.get('password')?.getError('pattern')" class="m-0"> password must start with uppercase character then from 5 to 10 smallcase characters or numbers</p>
+                                </div>
+    
+                            <input type="password" class="form-control mb-3" formControlName="rePassword"
+                                placeholder="rePassword" />
+    
+                                <div *ngIf="registerForm.get('rePassword')?.errors && registerForm.get('rePassword')?.touched " class="alert alert-danger">
+                                    <p *ngIf="registerForm.get('rePassword')?.getError('required')" class="m-0">rePassword is Required</p>
+                                    <p *ngIf="registerForm.get('rePassword')?.getError('pattern')" class="m-0"> rePassword must start with uppercase character then from 5 to 10 smallcase characters or numbers</p>
+                                    <p *ngIf="registerForm.get('rePassword')?.getError('passwordmatch')" class="m-0">password and repassword not match</p>
+                                </div>
+    
+                            <input type="tel" class="form-control mb-3" formControlName="phone" placeholder="phone" />
+    
+                            <div *ngIf="registerForm.get('phone')?.errors && registerForm.get('phone')?.touched " class="alert alert-danger">
+                                <p *ngIf="registerForm.get('phone')?.getError('required')" class="m-0">Phone is Required</p>
+                                <p *ngIf="registerForm.get('phone')?.getError('pattern')" class="m-0"> Enter avalid Egyption Number forExample (01289742597)</p>
+                            </div>
+    
+                            <button [disabled]="registerForm.invalid" type="submit" class="btn btn-primary btn-bg  w-100">
+                                <i *ngIf="isLodding" class="fas fa-spinner fa-spin"></i>
+                                <span *ngIf="!isLodding">Create Account</span>
+                            </button>
+                        </form>
+                        <div class="text-center mt-2">
+                            <div class="text-muted small">This site is protected by reCAPTCHA and the Google
+                                <a href="https://policies.google.com/privacy" class="text-secondary">Privacy Policy</a> and
+                                <a href="https://policies.google.com/terms" class="text-secondary">Terms of Service</a>
+                                apply.
+                            </div>
+                        </div>
+                        <hr />
+                        <div class="text-center">
+                            <span class="small">Already a member?</span>
+                            <a routerLink="/login" class="small text-decoration-none cursorPointer log ms-2">Log In
+                                <i class="fas fa-chevron-right small"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

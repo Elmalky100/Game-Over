@@ -1,0 +1,52 @@
+.backImg{
+    background-image: url(../../assets/images/background.png);
+    background-repeat: no-repeat;
+    background-color: #1c1e22;
+    background-position:top ;
+    background-size: contain;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0,0,0,.6);
+    padding: 50px 32px;
+
+}
+
+
+
+/* ______________________________________________ */
+
+@media (max-width: 1399.98px) { 
+    
+}
+@media (max-width: 1199.98px) {  
+    
+}
+@media (max-width: 991.98px) { 
+    .backImg{
+        background-size: 100% 100% ; 
+        background-position:center center ;
+       }
+       h4{
+        font-size: 19px;
+     }
+}
+@media (max-width: 767.98px) { 
+    .backImg{
+        background-size: 100% 100% ;
+        background-position:center center ;
+       }
+       h4{
+        font-size: 15px;
+     }
+}
+@media (max-width: 575.98px) { 
+   .backImg{
+    background-size: 100% 100%;
+    background-position:center center ;
+   }
+ h3{
+    font-size: 19px;
+ }
+}
+
+

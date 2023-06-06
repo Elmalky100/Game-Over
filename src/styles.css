@@ -1,0 +1,185 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap');
+
+
+:root{
+    --bg-main:#272b30;
+    --color-main:#aaa;
+    --box-shadow: 0 .5rem 1rem #00000026 ;
+    --box-bg:#32383e;
+    --box-border:0 solid rgba(0,0,0,.6);
+    --secondaryColor:#7a8288;
+    --font-family:'Xanh Mono', monospace ;
+    --anothor-color:#4799eb;
+}
+
+body{
+    color:var(--color-main);
+    background-color: var(--bg-main);
+}
+.main-color{
+    background-color: var(--bg-main) !important;
+}
+.colorMain{
+    color: var(--color-main);
+}
+.colorMain:hover{
+    color: var(--color-main);
+}
+.shadow{
+    box-shadow: var(--box-shadow)!important;
+}
+.box-bg{
+    background-color: var(--box-bg);
+}
+.box-bg:hover{
+    background-color: var(--box-bg);
+}
+.box-border{
+     border: var(--box-border);
+}
+
+.cursorPointer{
+     cursor: pointer; 
+}
+
+.secondaryColor{
+    color: var(--secondaryColor)!important;
+}
+.secondaryColor-bg{
+    background-color: var(--secondaryColor);
+    padding-top: 1px;
+    padding-bottom: 2px;
+    /* transform: translateY(-12%); */
+}
+
+.card1{
+    transition: all .2s;
+    cursor: pointer;
+}
+
+.card1:hover{
+    transform: scale(1.03);
+}
+
+.font{
+    font-family: var(--font-family)!important;
+}
+.log{
+    color:var(--anothor-color);
+}
+.log-bg{
+    background-color: var(--anothor-color);
+}
+.log-bg:hover{
+    background-color: var(--anothor-color);
+}
+.log:hover{
+    color:var(--anothor-color);
+}
+
+
+
+
+
+
+
+
+
+.landing{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom:0;
+    left: 0;
+    z-index: 333333333333333333;
+    display: flex;
+}
+
+
+/* ___________________________________________________________________loadingGameDetails */
+
+.loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+
+
+  
+
+
+
+
+/* _______________________________________________________________ loading*/
+
+
+
+  .loader2 {
+    /* width: 215px; */
+    height: 215px;
+    width: 100%;
+    /* height: 100%; */
+    display: block;
+    margin: auto;
+    position: relative;
+    background: var(--box-bg);
+    box-sizing: border-box;
+  }
+  .loader2::after {
+    content: '';
+    width: calc(100% - 30px);
+    height: calc(100% - 15px);
+    top: 15px;
+    left: 15px;
+    position: absolute;
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%),
+     linear-gradient(var(--secondaryColor) 100px, transparent 0),
+     linear-gradient(var(--secondaryColor) 16px, transparent 0),
+     linear-gradient(var(--secondaryColor) 50px, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 75px 175px, 100% 100px, 100% 16px, 100% 30px;
+    background-position: -185px 0, center 0, center 115px, center 142px;
+    box-sizing: border-box;
+    animation: animloader 1s linear infinite;
+  }
+  
+  @keyframes animloader {
+    to {
+      background-position: 185px 0, center 0, center 115px, center 142px;
+    }
+  }
+  
+
+
+
+
+
+  

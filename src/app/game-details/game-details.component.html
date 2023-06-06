@@ -1,0 +1,148 @@
+<div class="background"
+    style="background-image: url(https://www.freetogame.com/g/{{gameDetailes?.id}}/background.jpg);">
+    <div class="layer">
+        <div class="container my-5 pt-5">
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <div id="parent" class="position-relative ">
+                        <video loop autoplay muted class="w-100 top-0 position-relative rounded-2"
+                            src="https://www.freetogame.com/g/{{gameDetailes?.id}}/videoplayback.webm">
+
+                        </video>
+                        <img id="image" src="{{gameDetailes?.thumbnail}}"
+                            class="w-100 rounded-2 position-absolute top-0 start-0 " />
+                    </div>
+
+                    <div class="mt-3 d-flex justify-content-around ">
+                        <div class="col-md-2 me-2">
+                            <span class="btn btn-dark colorMain box-bg mb-3 py-2 cursorPointer">FREE</span>
+                        </div>
+                        <div class="col-md-9">
+                            <a type="button" target="_blank" class="btn  w-100 log-bg py-2 text-white"
+                                href="{{gameDetailes?.freetogame_profile_url}}">
+                                <strong>PLAY NOW </strong>
+                                <i class="fas fa-sign-out-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 mt-3">
+                    <h1>{{gameDetailes?.title}}</h1>
+
+                    <h5 class="mt-3">About {{gameDetailes?.title}}</h5>
+
+                    <p class="description">{{gameDetailes?.description}}</p>
+
+                    <div  *ngIf="gameDetailes?.minimum_system_requirements" >
+                        <h5 class="mt-3">Minimum System Requirements
+                        </h5>
+                    </div>
+
+                    <ul *ngIf="gameDetailes?.minimum_system_requirements" class="list-unstyled ms-2">
+
+                        <li *ngIf="gameDetailes.minimum_system_requirements?.graphics " class="py-2"><strong>graphics :
+                            </strong>{{gameDetailes.minimum_system_requirements?.graphics}}</li>
+
+
+                        <li *ngIf="gameDetailes.minimum_system_requirements?.memory" class="py-2">
+                            <strong>memory : </strong>{{gameDetailes.minimum_system_requirements?.memory}}
+                        </li>
+
+
+
+                        <li *ngIf="gameDetailes.minimum_system_requirements?.os" class="py-2"><strong>os :
+                            </strong>{{gameDetailes.minimum_system_requirements?.os}}
+                        </li>
+
+
+                        <li *ngIf="gameDetailes.minimum_system_requirements?.processor" class="py-2">
+                            <strong>processor :
+                            </strong>{{gameDetailes.minimum_system_requirements?.processor}}
+                        </li>
+
+
+
+                        <li *ngIf="gameDetailes.minimum_system_requirements?.storage" class="py-2">
+                            <strong>storage :
+                            </strong>{{gameDetailes.minimum_system_requirements?.storage}}
+                        </li>
+
+                    </ul>
+
+
+                    <h4 *ngIf="gameDetailes?.screenshots" class="pt-3">{{gameDetailes?.title}} Screenshots</h4>
+                    <owl-carousel-o [options]="customOptions">
+
+                        <ng-container *ngFor="let game of gameDetailes?.screenshots">
+                            <ng-template carouselSlide>
+                                <img [src]="game.image">
+                            </ng-template>
+                        </ng-container>
+
+                    </owl-carousel-o>
+                    <h2 *ngIf="gameDetailes?.title" class="my-4">Additional Information</h2>
+                    <div class="row mb-3">
+
+                        <div *ngIf="gameDetailes?.title" class=" col-md-4">
+                            <span class="text-muted">Title</span>
+                            <p>{{gameDetailes?.title}}</p>
+                        </div>
+
+
+                        <div *ngIf="gameDetailes?.developer" class="col-md-4">
+                            <span class="text-muted">Developer</span>
+                            <p> {{gameDetailes?.developer}}</p>
+                        </div>
+
+
+                        <div *ngIf="gameDetailes?.publisher" class="col-md-4">
+                            <span class="text-muted">Publisher</span>
+                            <p>{{gameDetailes?.publisher}}</p>
+                        </div>
+
+
+                        <div *ngIf="gameDetailes?.release_date" class="col-md-4">
+                            <span class="text-muted">Release Date</span>
+                            <p>{{gameDetailes?.release_date}}</p>
+                        </div>
+
+
+                        <div *ngIf="gameDetailes?.genre" class="col-md-4">
+                            <span class="text-muted">Genre</span>
+                            <p>{{gameDetailes?.genre}}</p>
+                        </div>
+
+
+                        <div *ngIf="gameDetailes?.platform" class="col-md-4">
+                            <span class="text-muted">Platform</span>
+                            <p>
+                                <i class="fab fa-windows me-1"></i>
+                                {{gameDetailes?.platform}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+<div *ngIf="isloading" class="landing  justify-content-center align-items-center">
+    <span class="loader"></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!-- && gameDetailes.minimum_system_requirements?.graphics!== undefined -->

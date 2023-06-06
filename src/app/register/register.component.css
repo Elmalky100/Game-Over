@@ -1,0 +1,29 @@
+.bg-shadow{
+    box-shadow: 0 1rem 3rem #0000002d!important;
+}
+
+
+.image{
+    background-image: url(../../assets/images/images1.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.gray{
+    background-color: #32383e;
+}
+
+input , input:focus{
+    background-color: #1c1e22;
+    border: 0 solid rgba(0,0,0,.6);
+    border-radius: 5px;
+    color: #fff!important;
+}
+
+.btn-bg{
+    background-color: #3a3f44;
+    border-color: #22241d;
+    color: #fff;
+}
+
+

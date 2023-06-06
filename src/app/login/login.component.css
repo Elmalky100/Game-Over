@@ -1,0 +1,31 @@
+.bg-shadow{
+    box-shadow: 0 1rem 3rem #0000002d!important;
+}
+
+
+.image{
+    background-image: url(../../assets/images/images1.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.gray{
+    background-color: #32383e;
+}
+
+input,.mywidth{
+width: 80%;
+margin: auto;
+}
+
+.btn-bg{
+    background-color: #3a3f44;
+    border-color: #22241d;
+    color: #fff;
+    width: 80%;
+}
+
+
+.myimg {
+    width: 110px;
+}
